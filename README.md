@@ -9,7 +9,7 @@
     (c)ip是int型的指针， ip2是int型变量。
 ## 2.35
     j是int型变量；k是const int 型引用；p是int型指针；j2是const int 型变量；k2是const int 型引用。
-``` C++
+```C++
         #include<bits/stdc++.h>
         using namespace std;
         int main() {
@@ -37,22 +37,6 @@ int main() {
 }
 ```
 改写：
-```C++
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-    char a[10010], b[10010];
-    cin >> a >> b;
-    if(strlen(a) == strlen(b))
-        cout << "a、b长度相等";
-    else if(strlen(a) > strlen(b))
-        cout << a;
-    else
-        cout << b;
-    return 0;
-}
-```
-## 3.4
 ```C++
 #include<bits/stdc++.h>
 using namespace std;
@@ -97,4 +81,8 @@ int main() {
 
     return 0;
 }
+```
+## 3.20
+```C++
+
 ```
