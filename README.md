@@ -151,3 +151,27 @@ int main() {
     return 0;
 }
 ```
+## 6.10
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+
+void my_swap(int *a, int *b)
+{
+    int t;
+    t = *a;
+    *a = *b;
+    *b = t;
+    printf("a = %d, b = %d", *a, *b);
+}
+
+int main() {
+    int a, b, *pa = &a, *pb = &b;
+    cin >> a >> b;
+    *pa = a;
+    *pb = b;
+    my_swap(pa, pb);
+    return 0;
+}
+```
+## 6.10
