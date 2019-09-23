@@ -8,4 +8,17 @@
     (b)i是int型的变量，ip是一个空指针。
     (c)ip是int型的指针， ip2是int型变量。
 ## 2.35
-    j是
+    j是int型变量；k是const int 型引用；p是int型指针；j2是const int 型变量；k2是const int 型引用。
+    ``` C++
+        #include<bits/stdc++.h>
+        using namespace std;
+        int main() {
+            const int i = 42;
+            auto j = i;
+            const auto &k = i;
+            auto *p = &i;
+            const auto j2 = i, &k2 = i;
+            cout << typeid().name();
+            return 0;
+        }
+    ```
