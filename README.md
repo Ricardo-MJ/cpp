@@ -22,3 +22,49 @@
             return 0;
         }
  ```
+## 3.4
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    string a, b;
+    cin >> a >> b;
+    if(a == b)
+        cout << "a、b大小相等";
+    else
+        cout << max(a, b);
+    return 0;
+}
+```
+改写：
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    char a[10010], b[10010];
+    cin >> a >> b;
+    if(strlen(a) == strlen(b))
+        cout << "a、b长度相等";
+    else if(strlen(a) > strlen(b))
+        cout << a;
+    else
+        cout << b;
+    return 0;
+}
+```
+## 3.5
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    string a, b;
+    cin >> a >> b;
+    if(a.size() == b.size())
+        cout << "a、b长度相等";
+    else if(a.size() > b.size())
+        cout << a;
+    else
+        cout << b;
+    return 0;
+}
+```
