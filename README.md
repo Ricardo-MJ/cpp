@@ -52,7 +52,7 @@ int main() {
     return 0;
 }
 ```
-## 3.5
+## 3.4
 ```C++
 #include<bits/stdc++.h>
 using namespace std;
@@ -65,6 +65,36 @@ int main() {
         cout << a;
     else
         cout << b;
+    return 0;
+}
+```
+## 3.5
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    string s, S;
+    while(getline(cin, s))
+    {
+        S += s;
+        cout << S;
+    }
+
+    return 0;
+}
+```
+修改：
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    string s, S;
+    while(getline(cin, s))
+    {
+        S += s + ' ';
+        cout << S;
+    }
+
     return 0;
 }
 ```
