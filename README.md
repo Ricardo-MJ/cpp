@@ -124,7 +124,29 @@ int main() {
     {
         sum = 0;
         sum = a[i] + a[999 - i];
-        cout << sum << endl;
+        cout << sum << ' ';
+    }
+    return 0;
+}
+```
+## 3.23
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<int> a;
+    int i, x, sum = 0;
+    for(i = 0; i <= 9; i++)
+    {
+        cin >> x;
+        a.push_back(x);
+    }
+    auto n = a.begin();
+    for(i = 0; i <= 9; i++)
+    {
+        *n *= 2;
+        n++;
+        cout << a[i] << ' ';
     }
     return 0;
 }
