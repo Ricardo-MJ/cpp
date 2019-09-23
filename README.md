@@ -8,19 +8,25 @@
     (b)i是int型的变量，ip是一个空指针。
     (c)ip是int型的指针， ip2是int型变量。
 ## 2.35
-    j是int型变量；k是const int 型引用；p是int型指针；j2是const int 型变量；k2是const int 型引用。
+    j是int型变量；k是int型引用；p是int型指针；j2是int型变量；k2是int型引用。
 ```C++
-        #include<bits/stdc++.h>
-        using namespace std;
-        int main() {
-            const int i = 42;
-            auto j = i;
-            const auto &k = i;
-            auto *p = &i;
-            const auto j2 = i, &k2 = i;
-            cout << typeid().name();
-            return 0;
-        }
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    const int i = 42;
+    auto j = i;
+    const auto &k = i;
+    auto *p = &i;
+    const auto j2 = i, &k2 = i;
+    cout << typeid(i).name() << endl;
+    cout << typeid(j).name() << endl;
+    cout << typeid(k).name() << endl;
+    cout << typeid(p).name() << endl;
+    cout << typeid(j2).name() << endl;
+    cout << typeid(k2).name() << endl;
+    return 0;
+}
+
  ```
 ## 3.4
 ```C++
@@ -84,5 +90,42 @@ int main() {
 ```
 ## 3.20
 ```C++
-
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<int> a;
+    int i, x, sum = 0;
+    cin >> x;
+    a.push_back(x);
+    for(i = 1; i <= 999; i++)
+    {
+        sum = 0;
+        cin >> x;
+        a.push_back(x);
+        sum = a[i - 1] + a[i];
+        cout << sum << ' ';
+    }
+    return 0;
+}
+```
+改写：
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<int> a;
+    int i, x, sum = 0;
+    for(i = 0; i <= 999; i++)
+    {
+        cin >> x;
+        a.push_back(x);
+    }
+    for(i = 0; i <= 499; i++)
+    {
+        sum = 0;
+        sum = a[i] + a[999 - i];
+        cout << sum << endl;
+    }
+    return 0;
+}
 ```
