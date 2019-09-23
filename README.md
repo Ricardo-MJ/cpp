@@ -9,7 +9,7 @@
     (c)ip是int型的指针， ip2是int型变量。
 ## 2.35
     j是int型变量；k是const int 型引用；p是int型指针；j2是const int 型变量；k2是const int 型引用。
-    ``` C++
+``` C++
         #include<bits/stdc++.h>
         using namespace std;
         int main() {
@@ -21,4 +21,4 @@
             cout << typeid().name();
             return 0;
         }
-    ```
+ ```
