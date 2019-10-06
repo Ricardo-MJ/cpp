@@ -188,7 +188,68 @@ int main() {
     可以被类的成员函数访问，但不能使用该类访问的代码访问，并且想隐藏实现细节的代码，应该定义在private之后。
 
 ## 7.27
-    
+    ```C++
+        #include<iostream>
+#include<string>
+class Screen{
+public:
+    typedef std::string::size_type pos;
+    Screen() = default;
+    Screen(pos ht, pos wd, char c): height(ht), width(wd), contents(ht * wd, c){}
+    char get() const
+        { return contents[cursor];}
+    char get(pos r, pos c) const
+        {
+            pos row = r * width;
+            return contents[row + c];
+        }
+    Screen &move(pos r, pos c);
+    Screen &set(char);
+    Screen &set(pos r, pos col, char ch);
+    Screen &display(std::ostream &os)
+    {
+        do_display(os);
+        return *this;
+    }
+private:
+    pos cursor = 0;
+    pos height = 0, width = 0;
+    std::string contents;
+    void do_display(std::ostream& os) const {
+		os << contents;}
+
+};
+
+Screen &Screen::move(pos r, pos c)
+{
+    pos row = r * width;
+    cursor = row + c;
+    return *this;
+}
+
+Screen &Screen::set(char c)
+{
+    contents[cursor] = c;
+    return *this;
+}
+
+Screen &Screen::set(pos r, pos col, char ch)
+{
+    contents[r * width + col] = ch;
+    return *this;
+}
+
+int main()
+{
+    Screen myScreen(5, 5, 'X');
+	myScreen.move(4, 0).set('#').display(std::cout);
+	std::cout << "\n";
+	myScreen.display(std::cout);
+	std::cout << "\n";
+    return 0;
+}
+
+    ```
 ## 7.49
     (a)正确。
     (b)不正确。combine的参数是非常量的引用，所以我们不能将临时参数传递给它，改成Sales_data &combine(const Sales_data&);后正确；
