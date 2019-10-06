@@ -248,11 +248,14 @@ int main()
 	std::cout << "\n";
     return 0;
 }
-    ```
+```
+
 ## 7.49
     (a)正确。
     (b)不正确。combine的参数是非常量的引用，所以我们不能将临时参数传递给它，改成Sales_data &combine(const Sales_data&);后正确；
     (c)不正确。后面的const不对。
     
 ## 7.58
-    
+    static double rate = 6.5;
+    static const int vexSize = 20;
+    static vector<double> vec(vecSize);
