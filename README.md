@@ -256,6 +256,6 @@ int main()
     (c)不正确。后面的const不对。
     
 ## 7.58
-    static double rate = 6.5;
-    static const int vexSize = 20;
-    static vector<double> vec(vecSize);
+    static double rate = 6.5;不合法 rate不是常量类型。
+    static const int vexSize = 20;合法。
+    static vector<double> vec(vecSize);不合法 vector是模板不是字面值常量类型。
