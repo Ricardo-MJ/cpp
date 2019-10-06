@@ -190,65 +190,64 @@ int main() {
 ## 7.27
     ```C++
         #include<iostream>
-#include<string>
-class Screen{
-public:
-    typedef std::string::size_type pos;
-    Screen() = default;
-    Screen(pos ht, pos wd, char c): height(ht), width(wd), contents(ht * wd, c){}
-    char get() const
-        { return contents[cursor];}
-    char get(pos r, pos c) const
-        {
-            pos row = r * width;
-            return contents[row + c];
-        }
-    Screen &move(pos r, pos c);
-    Screen &set(char);
-    Screen &set(pos r, pos col, char ch);
-    Screen &display(std::ostream &os)
-    {
-        do_display(os);
-        return *this;
-    }
-private:
-    pos cursor = 0;
-    pos height = 0, width = 0;
-    std::string contents;
-    void do_display(std::ostream& os) const {
-		os << contents;}
+	#include<string>
+	class Screen{
+	public:
+	    typedef std::string::size_type pos;
+	    Screen() = default;
+	    Screen(pos ht, pos wd, char c): height(ht), width(wd), contents(ht * wd, c){}
+	    char get() const
+		{ return contents[cursor];}
+	    char get(pos r, pos c) const
+		{
+		    pos row = r * width;
+		    return contents[row + c];
+		}
+	    Screen &move(pos r, pos c);
+	    Screen &set(char);
+	    Screen &set(pos r, pos col, char ch);
+	    Screen &display(std::ostream &os)
+	    {
+		do_display(os);
+		return *this;
+	    }
+	private:
+	    pos cursor = 0;
+	    pos height = 0, width = 0;
+	    std::string contents;
+	    void do_display(std::ostream& os) const {
+			os << contents;}
 
-};
+	};
 
-Screen &Screen::move(pos r, pos c)
-{
-    pos row = r * width;
-    cursor = row + c;
-    return *this;
-}
+	Screen &Screen::move(pos r, pos c)
+	{
+	    pos row = r * width;
+	    cursor = row + c;
+	    return *this;
+	}
 
-Screen &Screen::set(char c)
-{
-    contents[cursor] = c;
-    return *this;
-}
+	Screen &Screen::set(char c)
+	{
+	    contents[cursor] = c;
+	    return *this;
+	}
 
-Screen &Screen::set(pos r, pos col, char ch)
-{
-    contents[r * width + col] = ch;
-    return *this;
-}
+	Screen &Screen::set(pos r, pos col, char ch)
+	{
+	    contents[r * width + col] = ch;
+	    return *this;
+	}
 
-int main()
-{
-    Screen myScreen(5, 5, 'X');
-	myScreen.move(4, 0).set('#').display(std::cout);
-	std::cout << "\n";
-	myScreen.display(std::cout);
-	std::cout << "\n";
-    return 0;
-}
-
+	int main()
+	{
+	    Screen myScreen(5, 5, 'X');
+		myScreen.move(4, 0).set('#').display(std::cout);
+		std::cout << "\n";
+		myScreen.display(std::cout);
+		std::cout << "\n";
+	    return 0;
+	}
     ```
 ## 7.49
     (a)正确。
