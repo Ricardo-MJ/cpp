@@ -10,105 +10,111 @@
 ## 2.35
     j是int型变量；k是int型引用；p是int型指针；j2是int型变量；k2是int型引用。
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
     const int i = 42;
     auto j = i;
     const auto &k = i;
     auto *p = &i;
     const auto j2 = i, &k2 = i;
-    cout << typeid(i).name() << endl;
-    cout << typeid(j).name() << endl;
-    cout << typeid(k).name() << endl;
-    cout << typeid(p).name() << endl;
-    cout << typeid(j2).name() << endl;
-    cout << typeid(k2).name() << endl;
+    std::cout << typeid(i).name() << std::endl;
+    std::cout << typeid(j).name() << std::endl;
+    std::cout << typeid(k).name() << std::endl;
+    std::cout << typeid(p).name() << std::endl;
+    std::cout << typeid(j2).name() << std::endl;
+    std::cout << typeid(k2).name() << std::endl;
     return 0;
 }
  ```
 ## 3.4
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
     string a, b;
-    cin >> a >> b;
+    std::cin >> a >> b;
     if(a == b)
-        cout << "a、b大小相等";
+        std::cout << "a、b大小相等";
     else
-        cout << max(a, b);
+        std::cout << max(a, b);
     return 0;
 }
 ```
 改写：
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
     string a, b;
-    cin >> a >> b;
+    std::cin >> a >> b;
     if(a.size() == b.size())
-        cout << "a、b长度相等";
+        std::cout << "a、b长度相等";
     else if(a.size() > b.size())
-        cout << a;
+        std::cout << a;
     else
-        cout << b;
+        std::cout << b;
     return 0;
 }
 ```
 ## 3.5
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
     string s, S;
     while(getline(cin, s))
     {
         S += s;
-        cout << S;
+        std::cout << S;
     }
-
     return 0;
 }
 ```
 修改：
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
     string s, S;
     while(getline(cin, s))
     {
         S += s + ' ';
-        cout << S;
+        std::cout << S;
     }
-
     return 0;
 }
 ```
 ## 3.20
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
     vector<int> a;
     int i, x, sum = 0;
-    cin >> x;
+    std::cin >> x;
     a.push_back(x);
     for(i = 1; i <= 999; i++)
     {
         sum = 0;
-        cin >> x;
+        std::cin >> x;
         a.push_back(x);
         sum = a[i - 1] + a[i];
-        cout << sum << ' ';
+        std::cout << sum << ' ';
     }
     return 0;
 }
 ```
 改写：
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
@@ -116,28 +122,29 @@ int main() {
     int i, x, sum = 0;
     for(i = 0; i <= 999; i++)
     {
-        cin >> x;
+        std::cin >> x;
         a.push_back(x);
     }
     for(i = 0; i <= 499; i++)
     {
         sum = 0;
         sum = a[i] + a[999 - i];
-        cout << sum << ' ';
+        std::cout << sum << ' ';
     }
     return 0;
 }
 ```
 ## 3.23
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
     vector<int> a;
     int i, x, sum = 0;
     for(i = 0; i <= 9; i++)
     {
-        cin >> x;
+        std::cin >> x;
         a.push_back(x);
     }
     auto n = a.begin();
@@ -145,16 +152,16 @@ int main() {
     {
         *n *= 2;
         n++;
-        cout << a[i] << ' ';
+        std::cout << a[i] << ' ';
     }
     return 0;
 }
 ```
 ## 6.10
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<bits/stdc++.h>
-using namespace std;
-
 void my_swap(int *a, int *b)
 {
     int t;
@@ -166,7 +173,7 @@ void my_swap(int *a, int *b)
 
 int main() {
     int a, b, *pa = &a, *pb = &b;
-    cin >> a >> b;
+    std::cin >> a >> b;
     *pa = a;
     *pb = b;
     my_swap(pa, pb);
