@@ -36,7 +36,7 @@ int main() {
 int main() {
     string a, b;
     std::cin >> a >> b;
-    if(a == b)
+    if (a == b)
         std::cout << "a、b大小相等";
     else
         std::cout << max(a, b);
@@ -49,11 +49,11 @@ int main() {
 */
 #include<bits/stdc++.h>
 int main() {
-    string a, b;
+    std::string a, b;
     std::cin >> a >> b;
-    if(a.size() == b.size())
+    if (a.size() == b.size())
         std::cout << "a、b长度相等";
-    else if(a.size() > b.size())
+    else if (a.size() > b.size())
         std::cout << a;
     else
         std::cout << b;
@@ -66,9 +66,8 @@ int main() {
 */
 #include<bits/stdc++.h>
 int main() {
-    string s, S;
-    while(getline(cin, s))
-    {
+    std::string s, S;
+    while (getline(cin, s)) {
         S += s;
         std::cout << S;
     }
@@ -81,9 +80,8 @@ int main() {
 */
 #include<bits/stdc++.h>
 int main() {
-    string s, S;
-    while(getline(cin, s))
-    {
+    std::string s, S;
+    while (getline(cin, s)) {
         S += s + ' ';
         std::cout << S;
     }
@@ -96,12 +94,11 @@ int main() {
 */
 #include<bits/stdc++.h>
 int main() {
-    vector<int> a;
+    std::vector<int> a;
     int i, x, sum = 0;
     std::cin >> x;
     a.push_back(x);
-    for(i = 1; i <= 999; i++)
-    {
+    for (i = 1; i <= 999; i++) {
         sum = 0;
         std::cin >> x;
         a.push_back(x);
@@ -116,17 +113,14 @@ int main() {
 /*Copyright [2019] <Copyright MrM>
 */
 #include<bits/stdc++.h>
-using namespace std;
 int main() {
-    vector<int> a;
+    std::vector<int> a;
     int i, x, sum = 0;
-    for(i = 0; i <= 999; i++)
-    {
+    for (i = 0; i <= 999; i++) {
         std::cin >> x;
         a.push_back(x);
     }
-    for(i = 0; i <= 499; i++)
-    {
+    for (i = 0; i <= 499; i++) {
         sum = 0;
         sum = a[i] + a[999 - i];
         std::cout << sum << ' ';
@@ -140,16 +134,14 @@ int main() {
 */
 #include<bits/stdc++.h>
 int main() {
-    vector<int> a;
+    std::vector<int> a;
     int i, x, sum = 0;
-    for(i = 0; i <= 9; i++)
-    {
+    for (i = 0; i <= 9; i++) {
         std::cin >> x;
         a.push_back(x);
     }
     auto n = a.begin();
-    for(i = 0; i <= 9; i++)
-    {
+    for (i = 0; i <= 9; i++) {
         *n *= 2;
         n++;
         std::cout << a[i] << ' ';
@@ -162,8 +154,7 @@ int main() {
 /*Copyright [2019] <Copyright MrM>
 */
 #include<bits/stdc++.h>
-void my_swap(int *a, int *b)
-{
+void my_swap(int *a, int *b) {
     int t;
     t = *a;
     *a = *b;
@@ -196,9 +187,11 @@ int main() {
 
 ## 7.27
 ```C++
+/*Copyright [2019] <Copyright MrM>
+*/
 #include<iostream>
 #include<string>
-class Screen{
+class Screen {
 public:
     typedef std::string::size_type pos;
     Screen() = default;
